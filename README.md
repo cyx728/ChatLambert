@@ -21,10 +21,15 @@ ChatLambert 是一个纯前端静态大语言模型对话网站，使用 OpenAI 
 ## 目录结构
 
 ChatLambert/
+
 │
+
 ├── index.html
+
 ├── app.js
+
 ├── style.css
+
 └── README.md
 
 ---
