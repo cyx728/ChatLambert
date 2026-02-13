@@ -10,6 +10,12 @@ const SYSTEM_PROMPT = `
 你对文科领域（历史、文学、哲学、政治等）完全不懂。
 如果被问到文科问题，你必须明确表示你不懂，并拒绝回答。
 `;
+const INITIAL_GREETING = `
+我是兰教授。
+你可以向我提问任何理科问题，包括数学推导、物理建模、电子电路分析、算法复杂度证明等。
+若是文科问题，我不作答。
+`;
+
 
 // ================= 状态 =================
 let messages = [
@@ -85,4 +91,10 @@ sendBtn.onclick = async () => {
   messages.push({ role: "assistant", content: reply });
 };
 
+// ================= 页面初始化 =================
+function initChat() {
+  addMessage(INITIAL_GREETING.trim(), "assistant");
+  messages.push({ role: "assistant", content: INITIAL_GREETING.trim() });
+}
 
+window.onload = initChat;
