@@ -1,7 +1,7 @@
 // ================= API配置 =================
 const API_KEY = "sk-461bee457b674c0b9cd1f638e266dfcc";   // 明文
 const BASE_URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"; 
-const MODEL = "qwen-long-latest"; // 可替换
+const MODEL = "qwen-turbo"; // 可替换
 
 // ================= 系统Prompt =================
 const SYSTEM_PROMPT = `
