@@ -1,6 +1,7 @@
 # ChatLambert
 
 ChatLambert 是一个纯前端静态大语言模型对话网站，使用 OpenAI API 兼容格式接口（默认适配 Qwen 兼容模式）。本项目不依赖任何后端服务器，可直接部署为静态网页。
+全代码由ChatGPT生成。
 
 ---
 
@@ -112,3 +113,5 @@ GET /api/v1/dashboard/billing/credit_grants
 ## License
 
 仅用于学习与测试用途。
+
+**Lambert Yuxiang Chen**
