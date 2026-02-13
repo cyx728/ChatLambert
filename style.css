@@ -1,0 +1,207 @@
+/* ================= 基础重置 ================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               "PingFang SC", "Microsoft YaHei", sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #222;
+}
+
+/* ================= 顶栏 ================= */
+header {
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+header button {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+header button:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ================= 聊天容器 ================= */
+#chatContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ================= 消息气泡 ================= */
+.message {
+  max-width: 70%;
+  padding: 14px 18px;
+  border-radius: 18px;
+  line-height: 1.6;
+  font-size: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  animation: fadeIn 0.25s ease;
+  white-space: pre-wrap;
+}
+
+.user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  border-bottom-right-radius: 6px;
+}
+
+.assistant {
+  align-self: flex-start;
+  background: rgba(255,255,255,0.9);
+  border-bottom-left-radius: 6px;
+}
+
+/* ================= 底部输入区 ================= */
+footer {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.1);
+  padding: 16px 20px;
+  display: flex;
+  gap: 12px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+textarea {
+  flex: 1;
+  resize: none;
+  height: 60px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.08);
+}
+
+textarea:focus {
+  box-shadow: 0 0 0 2px rgba(0,114,255,0.4);
+}
+
+footer button {
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+footer button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,114,255,0.4);
+}
+
+/* ================= 弹窗 ================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.modal-content {
+  width: 360px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  animation: slideUp 0.25s ease;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.modal-content input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  margin-right: 10px;
+  margin-top: 8px;
+  padding: 8px 16px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-content button:first-of-type {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+}
+
+.modal-content button:last-of-type {
+  background: #eee;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ================= 动画 ================= */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= 滚动条美化 ================= */
+#chatContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chatContainer::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.4);
+  border-radius: 3px;
+}
